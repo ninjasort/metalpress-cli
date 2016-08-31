@@ -4,8 +4,7 @@ import SubCommand from '../models/sub-command';
 import gulp from 'gulp';
 import s3 from 'gulp-s3';
 import browserSync from 'browser-sync';
-import metalpress from '../';
-// import defaultConfig from '../../templates/metalpress.config';
+import metalpress from 'metalpress';
 
 var paths = {
   src: 'src/**',

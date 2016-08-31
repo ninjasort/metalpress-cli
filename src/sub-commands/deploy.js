@@ -3,7 +3,7 @@ import fs from 'fs';
 import SubCommand from '../models/sub-command';
 import gulp from 'gulp';
 import s3 from 'gulp-s3';
-import metalpress from '../';
+import metalpress from 'metalpress';
 
 const awsOptions = {
   headers: {
