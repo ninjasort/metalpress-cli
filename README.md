@@ -41,7 +41,7 @@ Here's an example structure:
 #### Install CLI
 
 ```sh
-npm install metalpress-cli
+npm install metalpress-cli -g
 ```
 
 #### Initialize a New Project
