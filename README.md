@@ -1,4 +1,4 @@
-# metalpress-cli [![npm](https://img.shields.io/npm/v/metalpress-cli.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/metalpress-cli) [![Travis](https://img.shields.io/travis/axisdefined/metalpress-cli.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/axisdefined/metalpress-cli)
+# metalpress-cli [![npm](https://img.shields.io/npm/v/metalpress-cli.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/metalpress-cli)
 
 CLI for Metalpress (Official)
 
