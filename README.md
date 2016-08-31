@@ -36,13 +36,14 @@ Here's an example structure:
 ```
 
 
-### CLI Usage
-
-#### Install CLI
+### Installation
 
 ```sh
 npm install metalpress-cli -g
 ```
+
+
+### CLI Usage
 
 #### Initialize a New Project
 
