@@ -66,23 +66,23 @@ export default class New extends SubCommand {
 
   // Should maybe prompt user for permission to do this since it's dangerous.
   resetGitHistory() {
-    this.ui.writeInfo('Removing the starter kit .git folder');
+    this.ui.writeInfo('Removing .git folder');
     rm('-rf', '.git');
     exec('git init && git add -A && git commit -m "Initial commit"', {
       silent: true
     });
     this.ui.writeCreate('Created new .git history for your project');
-    this.ui.writeInfo('Congrats! New Metalpress site ready to go.  CLI generators configured and ready to go');
+    this.ui.writeInfo('Congrats! New Metalpress site ready to go. CLI generators configured and ready to go.');
   }
 
   // All settings for react-redux-starter-kit live in this template so when
   // new projects get created users can immediately start using the CLI
   createProjectSettings() {
-    this.ui.writeInfo('creating a default metalpress.config.js for your project');
-    const configTemplate = '../../templates/metalpress.config.js';
+    this.ui.writeInfo('creating a default .metalpress for your project');
+    const configTemplate = '../../templates/.metalpress';
     const settings = new ProjectSettings(configTemplate);
     settings.save();
 
-    this.ui.writeCreate('metalpress.config.js with starter kit settings saved.');
+    this.ui.writeCreate('.metalpress with boilerplate settings saved.');
   }
 }
