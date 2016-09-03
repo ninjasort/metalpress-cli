@@ -21,7 +21,7 @@
     "metalpress-deploy": "bin/metalpress-deploy.js"
   },
   "dependencies": {
-    "browser-sync": "2.14.2",
+    "browser-sync": "2.14.3",
     "chalk": "1.1.3",
     "commander": "2.9.0",
     "deep-assign": "2.0.0",
@@ -31,7 +31,7 @@
     "fs-extra": "0.30.0",
     "gulp": "3.9.1",
     "gulp-s3": "0.3.0",
-    "inquirer": "1.1.2",
+    "inquirer": "1.1.3",
     "js-yaml": "3.6.1",
     "jsonfile": "2.3.1",
     "log-update": "1.0.2",
@@ -39,6 +39,6 @@
   },
   "devDependencies": {
     "babel-cli": "6.14.0",
-    "metalpress": "0.5.4"
+    "metalpress": "0.5.5"
   }
 }
