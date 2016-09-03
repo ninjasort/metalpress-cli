@@ -4,7 +4,12 @@ import SubCommand from '../models/sub-command';
 import gulp from 'gulp';
 import s3 from 'gulp-s3';
 import browserSync from 'browser-sync';
-import metalpress from 'metalpress';
+
+var resolve = require('resolve').sync;
+var basedir = process.cwd();
+
+var metalpressPath = resolve('metalpress', { basedir });
+var metalpress = require(metalpressPath).default;
 
 var paths = {
   src: 'src/**',

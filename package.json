@@ -35,10 +35,13 @@
     "js-yaml": "3.6.1",
     "jsonfile": "2.3.1",
     "log-update": "1.0.2",
+    "resolve": "1.1.7",
     "shelljs": "0.7.4"
   },
   "devDependencies": {
     "babel-cli": "6.14.0",
-    "metalpress": "0.5.5"
+    "babel-preset-es2015": "6.14.0",
+    "babel-preset-stage-0": "6.5.0",
+    "metalpress": "0.5.6"
   }
 }

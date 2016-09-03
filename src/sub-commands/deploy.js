@@ -3,7 +3,12 @@ import fs from 'fs';
 import SubCommand from '../models/sub-command';
 import gulp from 'gulp';
 import s3 from 'gulp-s3';
-import metalpress from 'metalpress';
+
+var resolve = require('resolve').sync;
+var basedir = process.cwd();
+
+var metalpressPath = resolve('metalpress', { basedir });
+var metalpress = require(metalpressPath).default;
 
 const awsOptions = {
   headers: {
