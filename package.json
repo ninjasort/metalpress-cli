@@ -1,6 +1,6 @@
 {
   "name": "metalpress-cli",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "CLI for Metalpress (Official)",
   "license": "MIT",
   "main": "bin/metalpress.js",
