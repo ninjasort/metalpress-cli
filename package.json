@@ -17,6 +17,7 @@
     "metalpress": "bin/metalpress.js",
     "metalpress-init": "bin/metalpress-init.js",
     "metalpress-new": "bin/metalpress-new.js",
+    "metalpress-theme": "bin/metalpress-theme.js",
     "metalpress-serve": "bin/metalpress-serve.js",
     "metalpress-deploy": "bin/metalpress-deploy.js"
   },
