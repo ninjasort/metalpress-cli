@@ -17,7 +17,8 @@
     "metalpress": "bin/metalpress.js",
     "metalpress-init": "bin/metalpress-init.js",
     "metalpress-new": "bin/metalpress-new.js",
-    "metalpress-theme": "bin/metalpress-theme.js",
+    "metalpress-install": "bin/metalpress-install.js",
+    "metalpress-uninstall": "bin/metalpress-uninstall.js",
     "metalpress-serve": "bin/metalpress-serve.js",
     "metalpress-deploy": "bin/metalpress-deploy.js"
   },
@@ -30,6 +31,7 @@
     "elegant-spinner": "1.0.1",
     "figlet": "1.1.2",
     "fs-extra": "0.30.0",
+    "github": "3.0.0",
     "gulp": "3.9.1",
     "gulp-s3": "0.3.0",
     "inquirer": "1.1.3",
