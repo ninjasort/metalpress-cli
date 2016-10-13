@@ -11,7 +11,9 @@
     ]
   },
   "scripts": {
-    "build": "babel src -d lib"
+    "build": "babel src -d lib",
+    "test": "mocha --compilers js:babel-register",
+    "test:watch": "npm t -w"
   },
   "bin": {
     "metalpress": "bin/metalpress.js",
