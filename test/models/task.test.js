@@ -1,7 +1,7 @@
 import Task from 'models/task';
 import { expect } from 'chai';
 
-xdescribe('(Model) Task', () => {
+describe('(Model) Task', () => {
   
   const task = new Task({
     ui: '',

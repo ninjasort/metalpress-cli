@@ -1,11 +1,10 @@
 import commander from 'commander';
-import version from '../../package';
+import { version } from '../version';
 
-console.log(version);
 const program = commander;
 
-// program
-//   .version()
+program
+  .version(version());
 
 program
   .command('init', 'initialize a metalpress.config.js file');
