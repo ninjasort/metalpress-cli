@@ -4,7 +4,7 @@ import chalk from 'chalk';
 import MockUI from '../helpers/mock-ui';
 import { EOL } from 'os';
 
-xdescribe('(Model) UI', () => {
+describe('(Model) UI', () => {
   const ui = new MockUI('DEBUG');
 
   beforeEach(function (){

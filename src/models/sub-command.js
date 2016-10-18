@@ -18,7 +18,7 @@ class SubCommand {
   }
 
   availableOptions() {
-    throw new Error('Subcommands must implement an availableOptions()');
+    throw new Error('Subcommands must implement a availableOptions()');
   }
 }
 
