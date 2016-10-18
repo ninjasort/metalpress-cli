@@ -1,7 +1,8 @@
 import Task from '../models/task';
 import denodeify from 'denodeify';
 
-const exec = denodeify(require('child_process').exec);
+// const exec = denodeify(require('child_process').exec);
+const exec = require('child_process').exec;
 
 export default class extends Task {
   constructor(environment) {
@@ -14,8 +15,8 @@ export default class extends Task {
     
     ui.startProgress(`${start}`);
     
-    return exec(`npm ${command.name} ${gitUrl} ${command.options}`, {silent: true})
-      .then((err, stdout, stderr) => {
+    return new Promise((resolve, reject) => {
+      exec(`npm ${command.name} ${gitUrl} ${command.options}`, (err, stdout, stderr) => {
         ui.stopProgress();
         
         if (stderr) {
@@ -27,7 +28,8 @@ export default class extends Task {
         }
         
         ui.writeInfo(`${command.stop}`);
-        Promise.resolve();
+        resolve();
       });
+    });
   }
 }

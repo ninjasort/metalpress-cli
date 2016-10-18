@@ -14,7 +14,7 @@ import { fileExists } from '../util/fs';
 
 export default class ProjectSettings {
   constructor(relativePath) {
-    this.relativePath = relativePath || '../../templates/.metalpress';
+    this.relativePath = relativePath || '../templates/.metalpress';
     this.loadSettings();
   }
 

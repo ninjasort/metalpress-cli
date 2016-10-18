@@ -110,3 +110,5 @@ export default class Install extends SubCommand {
 // 
 // I'll lose everything in those default folders. Everything will get killed. 
 // You basically break the site, but you should be ready for that.
+
+
