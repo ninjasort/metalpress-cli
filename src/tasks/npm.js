@@ -16,19 +16,17 @@ export default class extends Task {
     ui.startProgress(`${start}`);
     
     return new Promise((resolve, reject) => {
-      exec(`npm ${command.name} ${gitUrl} ${command.options}`, (err, stdout, stderr) => {
+      exec(`npm ${command.name} ${gitUrl} ${command.options ? command.options : ''}`, (err, stdout, stderr) => {
         ui.stopProgress();
         
         if (stderr) {
           ui.writeError('Something went wrong... please try again.  Make sure you have internet access');
           ui.writeError(`Error code: ${err}`);
-          ui.writeError(stdout);
-          ui.writeError(stderr);
           process.exit(1);
         }
         
         ui.writeInfo(`${command.stop}`);
-        resolve();
+        resolve(stdout);
       });
     });
   }

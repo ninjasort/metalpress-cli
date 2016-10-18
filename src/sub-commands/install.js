@@ -35,7 +35,7 @@ export default class Install extends SubCommand {
     const js = path.resolve(process.cwd(), `node_modules/${theme}/src/assets/js`);
     
     this.removeSrcFiles();
-    this.createSrcFolders();    
+    this.createSrcFolders();
 
     // cp('-R', `${images}/`, `${dest.images}`);
     cp('-R', `${sass}/*`, dest.sass);
@@ -68,8 +68,11 @@ export default class Install extends SubCommand {
     } else {
       // look up theme with github api
       // install through npm using git url
+      if (options.theme.indexOf('metalpress-theme') < 0) {
+        throw new Error('not a valid metalpress theme');
+      }
       this.npm
-        .run('https://github.com/axisdefined/metalpress-theme-default', {
+        .run(options.theme, {
           name: 'install',
           start: 'Installing {URL} from github.',
           stop: 'Theme successfully installed.',
