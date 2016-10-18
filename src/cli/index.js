@@ -1,6 +1,7 @@
 import commander from 'commander';
-// import version from '../../package';
+import version from '../../package';
 
+console.log(version);
 const program = commander;
 
 // program
