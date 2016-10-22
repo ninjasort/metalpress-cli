@@ -4,6 +4,9 @@ import SubCommand from '../models/sub-command';
 import gulp from 'gulp';
 import s3 from 'gulp-s3';
 import browserSync from 'browser-sync';
+import configureWebpack, {
+  omitWebpack
+} from '../config/configure-webpack';
 
 var resolve = require('resolve').sync;
 var basedir = process.cwd();
@@ -24,7 +27,8 @@ export default class Serve extends SubCommand {
     super();
     this.serverStarted = false;
     this.baseDir = './dist';
-    this.config = this.settings.settings;
+    this.config = this.settings.settings || {};
+    this.config.webpack = configureWebpack(this.config);
 
     this.defineTasks();
   }

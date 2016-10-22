@@ -25,6 +25,7 @@
     "metalpress-deploy": "bin/metalpress-deploy.js"
   },
   "dependencies": {
+    "bower-webpack-plugin": "0.1.9",
     "browser-sync": "2.14.3",
     "chalk": "1.1.3",
     "commander": "2.9.0",
