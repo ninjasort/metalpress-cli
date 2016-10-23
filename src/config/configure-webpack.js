@@ -17,8 +17,14 @@ export function loadCustomWebpack(ui, config) {
   const custom = {};
   try {
     // attempt to load custom config
-    custom.dev = require(path.resolve(config.basePath, config.webpack.dev)).default;
-    custom.prod = require(path.resolve(config.basePath, config.webpack.prod)).default;
+    custom.dev = require(path.resolve(config.basePath, config.webpack.dev));
+    if (custom.dev.default) {
+      custom.dev = custom.dev.default;
+    }
+    custom.prod = require(path.resolve(config.basePath, config.webpack.prod));
+    if (custom.prod.default) {
+      custom.prod = custom.prod.default;
+    }
     custom.dev.resolve = {
       root: [
         path.resolve(config.basePath, 'node_modules'),
@@ -33,7 +39,7 @@ export function loadCustomWebpack(ui, config) {
     };
     
     ui.writeInfo('Using custom webpack config...');
-
+    
     return custom;
   } catch (e) {
     if (!config.webpack) {

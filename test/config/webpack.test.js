@@ -13,7 +13,7 @@ describe('#configureWebpack', () => {
   var config;
   beforeEach(() => {
     config = {
-      basePath: '.'
+      basePath: __dirname
     };
     ui.clear(); 
   });
@@ -26,9 +26,21 @@ describe('#configureWebpack', () => {
 
   it('should log error if config webpack paths are not defined', () => {
     const string = "Could not load custom webpack config. TypeError: Cannot read property 'dev' of undefined";
-    var webpackConfig = loadCustomWebpack(ui, config);
+    let webpackConfig = loadCustomWebpack(ui, config);
+    
     const expected = chalk.red('  error: ') + chalk.white(string);
+
     expect(ui.errors).to.eql(expected + EOL);
+  });
+
+  it('should load custom webpack configs when passed as a path', () => {
+    config.webpack = {
+      dev: '../fixtures/webpack.config',
+      prod: '../fixtures/webpack.prod.config'
+    };
+    let webpackConfig = loadCustomWebpack(ui, config);
+    expect(webpackConfig.dev).to.be.an('object');
+    expect(webpackConfig.prod).to.be.an('object');
   });
 
 });
