@@ -43,5 +43,19 @@ describe('#configureWebpack', () => {
     expect(webpackConfig.prod).to.be.an('object');
   });
 
-  
+  describe('#omitWebpack', () => {
+    
+    it('should omit the webpack config', () => {
+      config.webpack = {
+        dev: '../fixtures/webpack.config',
+        prod: '../fixtures/webpack.prod.config'
+      };
+      expect(config.webpack).to.be.defined;
+      let webpackConfig = loadCustomWebpack(ui, config);
+      expect(omitWebpack(config).webpack).to.be.undefined;
+    });
+
+  });
+
+
 });
