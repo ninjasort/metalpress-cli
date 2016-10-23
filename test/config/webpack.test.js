@@ -43,4 +43,5 @@ describe('#configureWebpack', () => {
     expect(webpackConfig.prod).to.be.an('object');
   });
 
+  
 });
