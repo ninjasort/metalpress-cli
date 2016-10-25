@@ -1,4 +1,4 @@
-# metalpress-cli [![npm](https://img.shields.io/npm/v/metalpress-cli.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/metalpress-cli)
+# metalpress-cli [![npm](https://img.shields.io/npm/v/metalpress-cli.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/metalpress-cli) [![Codecov branch](https://img.shields.io/codecov/c/github/axisdefined/metalpress-cli/themes.svg)](https://codecov.io/gh/axisdefined/metalpress-cli/branch/themes)
 
 CLI for Metalpress (Official)
 
