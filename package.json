@@ -21,8 +21,6 @@
     "metalpress": "bin/metalpress.js",
     "metalpress-init": "bin/metalpress-init.js",
     "metalpress-new": "bin/metalpress-new.js",
-    "metalpress-install": "bin/metalpress-install.js",
-    "metalpress-uninstall": "bin/metalpress-uninstall.js",
     "metalpress-serve": "bin/metalpress-serve.js",
     "metalpress-deploy": "bin/metalpress-deploy.js"
   },

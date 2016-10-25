@@ -16,12 +16,6 @@ program
   .command('serve', 'start a server on http://localhost:3000');
 
 program
-  .command('install <name>', 'install new themes').alias('i');
-
-program
-  .command('uninstall <name>', 'uninstall new themes');
-
-program
   .command('deploy', 'deploy a metalpress project');
 
 program.parse(process.argv);
