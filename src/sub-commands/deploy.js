@@ -8,7 +8,11 @@ var resolve = require('resolve').sync;
 var basedir = process.cwd();
 
 var metalpressPath = resolve('metalpress', { basedir });
-var metalpress = require(metalpressPath).default;
+if (module.default) {
+  var metalpress = module.default;
+} else {
+  var metalpress = module;
+}
 
 const awsOptions = {
   headers: {

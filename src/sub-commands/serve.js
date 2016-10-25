@@ -9,7 +9,12 @@ var resolve = require('resolve').sync;
 var basedir = process.cwd();
 
 var metalpressPath = resolve('metalpress', { basedir });
-var metalpress = require(metalpressPath).default;
+var module = require(metalpressPath);
+if (module.default) {
+  var metalpress = module.default;
+} else {
+  var metalpress = module;
+}
 
 var paths = {
   src: 'src/**',
