@@ -24,23 +24,37 @@ describe('#configureWebpack', () => {
     expect(newConfig.prod).to.be.an('object');
   });
 
-  it('should log error if config webpack paths are not defined', () => {
-    const string = "Could not load custom webpack config. TypeError: Cannot read property 'dev' of undefined";
-    let webpackConfig = loadCustomWebpack(ui, config);
-    
-    const expected = chalk.red('  error: ') + chalk.white(string);
+  describe('#loadCustomWebpack', () => {
 
-    expect(ui.errors).to.eql(expected + EOL);
-  });
+    it('should log error if config webpack paths are not defined', () => {
+      const string = "Could not load custom webpack config. TypeError: Cannot read property 'dev' of undefined";
+      let webpackConfig = loadCustomWebpack(ui, config);
+      
+      const expected = chalk.red('  error: ') + chalk.white(string);
 
-  it('should load custom webpack configs when passed as a path', () => {
-    config.webpack = {
-      dev: '../fixtures/webpack.config',
-      prod: '../fixtures/webpack.prod.config'
-    };
-    let webpackConfig = loadCustomWebpack(ui, config);
-    expect(webpackConfig.dev).to.be.an('object');
-    expect(webpackConfig.prod).to.be.an('object');
+      expect(ui.errors).to.eql(expected + EOL);
+    });
+
+    it('should load custom webpack configs when passed as a path', () => {
+      config.webpack = {
+        dev: '../fixtures/webpack.config',
+        prod: '../fixtures/webpack.prod.config'
+      };
+      let webpackConfig = loadCustomWebpack(ui, config);
+      expect(webpackConfig.dev).to.be.an('object');
+      expect(webpackConfig.prod).to.be.an('object');
+    });
+
+    it('should use the es6 default module if there is one', () => {
+      config.webpack = {
+        dev: '../fixtures/webpack.config.es6',
+        prod: '../fixtures/webpack.prod.config.es6'
+      };
+      let webpackConfig = loadCustomWebpack(ui, config);
+      expect(webpackConfig.dev).to.not.include.keys('default');
+      expect(webpackConfig.prod).to.not.include.keys('default');
+    });
+
   });
 
   describe('#omitWebpack', () => {
@@ -50,7 +64,7 @@ describe('#configureWebpack', () => {
         dev: '../fixtures/webpack.config',
         prod: '../fixtures/webpack.prod.config'
       };
-      expect(config.webpack).to.be.defined;
+      expect(config.webpack).to.exist;
       let webpackConfig = loadCustomWebpack(ui, config);
       expect(omitWebpack(config).webpack).to.be.undefined;
     });
