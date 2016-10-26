@@ -15,7 +15,8 @@
     "test": "NODE_PATH=$NODE_PATH:$PWD/src mocha --compilers js:babel-register",
     "test:watch": "npm t -- -w",
     "cover": "nyc npm t -r lcov",
-    "report-coverage": "nyc report --reporter=text-lcov > coverage/coverage.lcov && codecov -t fd314356-ed0d-4f61-9588-48d3405179d6"
+    "report-coverage": "nyc report --reporter=text-lcov > coverage/coverage.lcov && codecov -t fd314356-ed0d-4f61-9588-48d3405179d6",
+    "prepublish": "npm run build"
   },
   "bin": {
     "metalpress": "bin/metalpress.js",
