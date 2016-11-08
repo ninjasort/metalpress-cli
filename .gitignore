@@ -27,11 +27,10 @@ node_modules
 docs/
 
 # Distributed files
+lib/
 dist/
 
 # Build files
-lib/
-umd/
 
 .nyc_output
 themes

@@ -8,6 +8,7 @@ var resolve = require('resolve').sync;
 var basedir = process.cwd();
 
 var metalpressPath = resolve('metalpress', { basedir });
+var module = require(metalpressPath);
 if (module.default) {
   var metalpress = module.default;
 } else {
