@@ -26,11 +26,14 @@ export default class Serve extends SubCommand {
     this.ui.write('Serves a metalpress project on a browser-sync server (default: http://localhost:3000)\n');
   }
 
-  build(cb) {
-    metalpress(this.config, cb);
+  build() {
+    metalpress(
+      this.config, 
+      this.watch.bind(this, this.baseDir)
+    );
   }
 
-  run() {
+  watch(server) {
     const settings = {
       ghostMode: {
         clicks: true,
@@ -38,9 +41,7 @@ export default class Serve extends SubCommand {
         links: true,
         forms: true
       },
-      server: {
-        baseDir: this.baseDir
-      }
+      server
     };
 
     browserSync.watch('src/**', () => build(browserSync.reload));
@@ -48,5 +49,9 @@ export default class Serve extends SubCommand {
     browserSync.watch('templates/_includes/**/*.liquid', () => build(browserSync.reload));
 
     browserSync.init(settings);
+  }
+
+  run() {
+    this.build();
   }
 }
