@@ -11,7 +11,7 @@ test.before(t => {
   subCommand = new Serve()
 })
 
-test.cb.only('should call back without error', t => {
+test.cb('should call back without error', t => {
   subCommand.build((err) => {
     t.falsy(err)
     t.end()
