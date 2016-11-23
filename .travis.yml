@@ -7,8 +7,6 @@ before_script:
   - npm prune
   - npm test
   - npm run cover
-  # - npm run lint
-  # - npm run check-coverage
   - npm run build
 after_success:
   - npm run report-coverage
