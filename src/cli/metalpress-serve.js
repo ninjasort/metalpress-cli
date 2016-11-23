@@ -1,10 +1,10 @@
 import commander from 'commander';
 import Serve from '../sub-commands/serve';
 
-const subCommand = new Serve();
+const subCommand = new Serve()
 
 commander.on('--help', () => {
-  subCommand.printUserHelp();
+  subCommand.printUserHelp()
 });
 
-subCommand.run();
+subCommand.run()

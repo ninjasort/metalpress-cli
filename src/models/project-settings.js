@@ -14,16 +14,16 @@ import { fileExists } from '../util/fs';
 
 export default class ProjectSettings {
   constructor(relativePath) {
-    this.relativePath = relativePath || '../templates/.metalpress';
-    this.loadSettings();
+    this.relativePath = relativePath || '../templates/.metalpress'
+    this.loadSettings()
   }
 
   loadSettings() {
     if (this.settingsExist()) {
-      this.settings = jf.readFileSync(this.settingsPath());
+      this.settings = jf.readFileSync(this.settingsPath())
     } else {
       this.buildFromTemplate();
-      this.settings = jf.readFileSync(this.settingsPath());
+      this.settings = jf.readFileSync(this.settingsPath())
     }
   }
 
@@ -38,19 +38,19 @@ export default class ProjectSettings {
   }
 
   buildFromTemplate() {
-    copySync(this.templatePath(), this.settingsPath());
+    copySync(this.templatePath(), this.settingsPath())
   }
 
   settingsPath() {
-    return path.join(process.cwd(), '.metalpress');
+    return path.join(process.cwd(), '.metalpress')
   }
 
   settingsExist() {
-    return fileExists(this.settingsPath());
+    return fileExists(this.settingsPath())
   }
 
   getSetting(key) {
-    return this.settings[key];
+    return this.settings[key]
   }
 
   getAllSettings() {

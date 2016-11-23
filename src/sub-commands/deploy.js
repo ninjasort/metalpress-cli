@@ -4,15 +4,17 @@ import SubCommand from '../models/sub-command';
 import gulp from 'gulp';
 import s3 from 'gulp-s3';
 
-var resolve = require('resolve').sync;
-var basedir = process.cwd();
+var resolve = require('resolve').sync
+var basedir = process.cwd()
 
-var metalpressPath = resolve('metalpress', { basedir });
-var module = require(metalpressPath);
+var metalpressPath = resolve('metalpress', { basedir })
+var module = require(metalpressPath)
+
+let metalpress
 if (module.default) {
-  var metalpress = module.default;
+  metalpress = module.default
 } else {
-  var metalpress = module;
+  metalpress = module
 }
 
 const awsOptions = {

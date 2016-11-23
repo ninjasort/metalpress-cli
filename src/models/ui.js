@@ -1,16 +1,16 @@
-import { EOL } from 'os';
-import chalk from 'chalk';
-import elegantSpinner from 'elegant-spinner';
-import logUpdate from 'log-update';
+import { EOL } from 'os'
+import chalk from 'chalk'
+import elegantSpinner from 'elegant-spinner'
+import logUpdate from 'log-update'
 
-const frame = elegantSpinner();
-const DEFAULT_WRITE_LEVEL = 'INFO';
+const frame = elegantSpinner()
+const DEFAULT_WRITE_LEVEL = 'INFO'
 const WRITE_LEVELS = {
   'DEBUG': 1,
   'INFO': 2,
   'WARNING': 3,
   'ERROR': 4
-};
+}
 
 class UI {
   constructor(options = {}) {
