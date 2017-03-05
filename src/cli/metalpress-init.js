@@ -1,10 +1,10 @@
-import commander from 'commander';
-import Init from '../sub-commands/init';
+import commander from 'commander'
+import Init from '../sub-commands/init'
 
-const subCommand = new Init();
+const subCommand = new Init()
 
 commander.on('--help', () => {
-  subCommand.printUserHelp();
+  subCommand.printUserHelp()
 });
 
-subCommand.run();
+subCommand.run()
